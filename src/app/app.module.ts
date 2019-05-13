@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { TransferHttpCacheModule } from '@nguniversal/common';
-import { DragulaModule } from 'ng2-dragula';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
+import { IndexComponent } from './views/root/index.component';
 import { SharedModule } from './modules/shared/shared.module';
 import { WindowService } from './services/window/window.service';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularMaterialModule } from './modules/angular-material';
 
 // For AoT compilation:
 export function getWindow() {
@@ -18,19 +18,19 @@ export function getWindow() {
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    IndexComponent
   ],
   imports: [
     HttpClientModule,
-    DragulaModule.forRoot(),
     // Add .withServerTransition() to support Universal rendering.
     // The application ID can be any identifier which is unique on
     // the page.
     BrowserModule.withServerTransition({appId: 'my-app'}),
     TransferHttpCacheModule,
-
+    AngularMaterialModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full'},
+      { path: '', component: IndexComponent, pathMatch: 'full'},
       { path: 'speakers', loadChildren: './modules/speakers/speakers.module#SpeakersModule'}
     ]),
     SharedModule

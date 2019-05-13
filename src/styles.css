@@ -1,11 +1,9 @@
-* {
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body { 
     margin: 0;
-    padding: 0
 }
-body {
-    font-family: Helvetica;
-}
-#container {
-    max-width: 800px;
-    margin: 0 auto;
+
+html {
+    font-size: 12px;
 }

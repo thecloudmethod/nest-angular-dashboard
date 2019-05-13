@@ -1,5 +1,7 @@
 import { HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Inject, Injectable, Optional } from '@angular/core';
+import {Request} from 'express';
+import {REQUEST} from '@nguniversal/express-engine/tokens';
 
 @Injectable()
 export class UniversalInterceptorService implements HttpInterceptor {
@@ -9,9 +11,8 @@ export class UniversalInterceptorService implements HttpInterceptor {
   ) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
-    console.log(`intercepting the url ${req.url}`);
     const serverReq = !this.serverUrl ? req : req.clone({
-      url: `${this.serverUrl}${req.url}`
+      url: `${req.url}`
     });
 
     return next.handle(serverReq);

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "nest-nguniversal-demo": {
+    "nest-angular-base": {
       "root": "",
       "projectType": "application",
       "architect": {
@@ -55,18 +55,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "nest-nguniversal-demo:build"
+            "browserTarget": "nest-angular-base:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "nest-nguniversal-demo:build:production"
+              "browserTarget": "nest-angular-base:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "nest-nguniversal-demo:build"
+            "browserTarget": "nest-angular-base:build"
           }
         },
         "test": {
@@ -125,7 +125,7 @@
         }
       }
     },
-    "nest-nguniversal-demo-e2e": {
+    "nest-angular-base-e2e": {
       "root": "",
       "projectType": "application",
       "cli": {},
@@ -135,7 +135,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "nest-nguniversal-demo:serve"
+            "devServerTarget": "nest-angular-base:serve"
           }
         },
         "lint": {

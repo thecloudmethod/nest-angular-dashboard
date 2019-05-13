@@ -10,6 +10,6 @@ async function bootstrap() {
     methods: 'GET',
     maxAge: 3600,
   });
-  await app.listen(4000);
+  await app.listen(4001);
 }
 bootstrap().catch(err => console.error(err));
